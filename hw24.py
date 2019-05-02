@@ -6,19 +6,19 @@ planet = "m"
 
 # constants
 g     = 9.81	# m s^-2
-m     = 1.0	# kg
+m     = 4.0	# kg
 rho   = 1.22	# kg m^-3
 C     = 0.47	# unitless
 R     = 0.08    # m
 h     = 0.001   # seconds
-theta = 30.0*(np.pi/180) # radians
-v0    = 100.0	# m s^-1
+theta = 85.0*(np.pi/180) # radians
+v0    = 18000.0	# m s^-1
 const = (rho*C*np.pi*R**2)/(2.0*m)
 
 if planet == "m":
   g = 3.71 # m s^-2
   rho = .20 # kg m^-3
-
+  const = (rho*C*np.pi*R**2)/(2.0*m)
 # define the equations of motion
 def f(r,const):
     x   = r[0]
@@ -45,6 +45,8 @@ while r[1]>=0:
     r += (k1+2*k2+2*k3+k4)/6
     xpoints.append(r[0])
     ypoints.append(r[1])
+
+print(r[0], r[1])
 
 # make plot for part (b)
 p1 = plt.figure(1)
