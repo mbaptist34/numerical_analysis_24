@@ -70,4 +70,4 @@ for m in [0.25,0.5,1,2,4]:
 plt.xlabel("x [m]")
 plt.ylabel('y [m]')
 plt.legend()
-p2.show()
+plt.show()
