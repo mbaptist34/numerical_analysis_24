@@ -2,6 +2,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+planet = "m"
+
 # constants
 g     = 9.81	# m s^-2
 m     = 1.0	# kg
@@ -12,6 +14,10 @@ h     = 0.001   # seconds
 theta = 30.0*(np.pi/180) # radians
 v0    = 100.0	# m s^-1
 const = (rho*C*np.pi*R**2)/(2.0*m)
+
+if planet == "m":
+  g = 3.71 # m s^-2
+  rho = .20 # kg m^-3
 
 # define the equations of motion
 def f(r,const):
